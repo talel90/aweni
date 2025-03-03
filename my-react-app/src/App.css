@@ -1,0 +1,511 @@
+/* Reset body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f4f4;
+  color: #333;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow: auto;
+  line-height: 1.6;
+}
+
+/* Fullscreen container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh; /* Ensures it spans the full viewport height */
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Content styling */
+.full-screen-content {
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f4f4;
+  padding: 15px 30px;
+  box-shadow: 0 2px 4px rgba(169, 143, 143, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%; /* Full width */
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #a00d0d;
+  margin-right: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #a00d0d;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #660b1e;
+}
+
+.auth-buttons button {
+  
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.auth-buttons .sign-up {
+  background-color: #a00d0d;
+  color: #e9dbdb;
+}
+
+.auth-buttons button:hover {
+  background-color: #a00d0d;
+}
+
+.auth-buttons .sign-up:hover {
+  background-color: #a00d0d;
+}
+
+/* Hero Section Styles */
+.hero {
+  content: '';
+  /*background-image: url('/images/flooring-ml.avif'); /* Image de fond */
+  background-size: cover; /* L'image couvre toute la section */
+  background-position: center; /* Centre l'image */
+  height: 100vh; /* Hauteur égale à 100% de la hauteur de l'écran */
+  width: 97vw; /* Largeur égale à 100% de la largeur de l'écran */
+  margin: 0; /* Supprime les marges */
+  padding: 0; /* Supprime les paddings */
+  display: flex; /* Flexbox pour aligner le contenu */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  flex-direction: column; /* Colonne pour empiler les éléments */
+  color: white; /* Texte en blanc */
+  position: relative; /* Pour ajouter des effets ou des couches si nécessaire */
+  overflow: hidden; /* Empêche tout dépassement de contenu */
+  animation: slideshow 12s infinite; /* 12 seconds per cycle */
+}
+@keyframes slideshow {
+  0% { background-image: url('/images/flooring-ml.avif');  }
+  30% { background-image: url('/images/flooring-ml.avif');  }
+  35% { background-image: url('/images/flooring-ml.avif');  }
+  35% { background-image: url('/images/landscape-ml.avif');  }
+  65% { background-image: url('/images/landscape-ml.avif');  }
+  70% { background-image: url('/images/landscape-ml.avif');  }
+  70% { background-image: url('/images/moving-ml.avif');  }
+  100% { background-image: url('/images/moving-ml.avif');  }
+}
+
+
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center; /* Center the search bar */
+  align-items: center;
+  width: 100%; /* Make the container full width */
+  max-width: 800px; /* Limit the maximum width for large screens */
+  margin: 0 auto; /* Center horizontally */
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="text"] {
+  padding: 15px;
+  border: 2px solid #a00d0d;
+  border-radius: 30px;
+  flex-grow: 1; /* Makes input field take up available space */
+  min-width: 200px; /* Prevents input from becoming too small */
+  background: linear-gradient(45deg, #e0e0e0, #f7f7f7);
+  color: #333;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus {
+  background: #fff;
+  border-color: #a00d0d;
+  box-shadow: 0 4px 8px rgba(160, 13, 13, 0.2);
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  background-color: #a00d0d;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #b93e3e;
+  transform: translateY(-2px); /* Slight hover lift */
+}
+
+button:active {
+  transform: translateY(0); /* Revert back when clicked */
+}
+
+/* Optional: Add glowing effect to the input and button */
+input[type="text"]:focus, button:hover {
+  box-shadow: 0 0 10px rgba(160, 13, 13, 0.4);
+}
+
+.search-bar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #a00d0d;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.search-bar:hover::after {
+  transform: scaleX(1); /* Underline effect on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column; /* Stack input and button vertically */
+    gap: 15px;
+  }
+
+  input[type="text"] {
+    width: 80%; /* Make the input take up full width */
+  }
+
+  button {
+    width: 29%; /* Make the button take up full width */
+    height: 50px;
+
+  }
+}
+
+
+/* Section Styles */
+/* Base styling for all sections */
+/* Base styling for all sections */
+/* Main service sections */
+/* General Section Styling */
+.services, .additional-services {
+  padding: 50px 30px;
+  background-color: #a00d0d;
+  margin: 30px auto;
+  border-radius: 20px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Hover effect to make sections interactive */
+.services:hover, .additional-services:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling */
+.services h2, .additional-services h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1d0606; /* Red color */
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Grid Layout for Dividing Sections into 3 Columns */
+.services .service-grid, .additional-services .home-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+/* Individual Service and Project Cards */
+.service-card, .project-card {
+  background-color: #d9c7c7;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 320px; /* Limiting card width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover, .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Titles */
+.service-card h3, .project-card h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Paragraph and description for project cards */
+.project-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Buttons in service cards */
+.service-card button, .project-card button {
+  background-color: #a00d0d; /* Red background for buttons */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.service-card button:hover, .project-card button:hover {
+  background-color: #800808; /* Darker red on hover */
+}
+
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .services, .additional-services {
+    padding: 30px 15px;
+    margin: 20px auto;
+    max-width: 90%;
+  }
+
+  /* For smaller screens, make the grid single column */
+  .services .service-grid, .additional-services .home-projects-grid {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+
+  .service-card, .project-card {
+    max-width: 100%;
+  }
+}
+
+
+
+.icon-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.icon-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.icon-item span {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.icon-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  background-color: #eaeaea;
+}
+
+.icon-item:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* General Footer Styling */
+.footer {
+  width: 100%;
+  background-color: #080000; /* Black background */
+  padding: 40px 0; /* More padding for better spacing */
+  box-sizing: border-box;
+  color: #fff; /* White text for contrast */
+}
+
+/* Footer Top Styling */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Footer Sections */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff; /* White text for headings */
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 5px;
+  color: #ddd; /* Light grey text for list items */
+}
+
+/* Footer Bottom Styling */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111; /* Dark grey background for the bottom part */
+  padding: 20px;
+}
+
+/* Newsletter Form Styling */
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333; /* Dark text for inputs */
+}
+
+.footer-newsletter button {
+  padding: 10px 20px;
+  background-color: #a00d0d; /* Red button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-newsletter button:hover {
+  background-color: #800808; /* Darker red on hover */
+}
+
+/* App Icons Styling */
+.footer-apps a img {
+  width: 150px;
+  margin: 5px;
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Parent container to use flex */
+.container {
+  display: flex;
+  /*justify-content: center; /* Center the content horizontally */
+ /* align-items: center; /* Center the content vertically */
+  height: 100vh; /* Full height to center the link in the middle of the page */
+}
+
+/* Style for the link */
+a {
+  font-size: 15px;
+  color: #a00d0d; /* Red color for the text */
+  text-decoration: none; /* Remove the default underline */
+  font-weight: bold; /* Make the text bold */
+  padding: 10px 20px;
+  border: 2px solid #a00d0d; /* Add a border to the link */
+  border-radius: 30px; /* Rounded corners for a smooth, modern look */
+  display: inline-flex; /* Make the link a flex container */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  min-width: none; /* Minimum width to make it look like a button */
+  text-align: center; /* Ensure the text is centered */
+}
+
+a:hover {
+  background-color: #a00d0d; /* Red background on hover */
+  color: white; /* Change text color to white on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+a:active {
+  transform: scale(1); /* Return to normal size when clicked */
+}
