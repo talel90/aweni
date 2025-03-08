@@ -37,55 +37,28 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #f5f4f4;
-  padding: 15px 30px;
+  padding: 10px;
   box-shadow: 0 2px 4px rgba(169, 143, 143, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%; /* Full width */
+  width: 100%;
   border-bottom: 1px solid #ddd;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #a00d0d;
-  margin-right: 20px;
-}
-
-.nav {
-  display: flex;
-  gap: 15px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #a00d0d;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav a:hover {
-  color: #660b1e;
-}
-
 .auth-buttons button {
-  
   border: none;
   margin-left: 10px;
   cursor: pointer;
   font-weight: 500;
-  padding: 10px 20px;
+  padding: 10px 30px;
+  margin-bottom: 10px;
   border-radius: 5px;
-  transition: background-color 0.3s;
 }
 
 .auth-buttons .sign-up {
   background-color: #a00d0d;
-  color: #e9dbdb;
+  color: #ffffff;
 }
 
 .auth-buttons button:hover {
@@ -398,12 +371,13 @@ input[type="text"]:focus, button:hover {
   flex: 1;
   min-width: 200px;
   margin: 10px;
+  ;
 }
 
 .footer-section h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #fff; /* White text for headings */
+  color: #ffffff; /* White text for headings */
 }
 
 .footer-section ul {
@@ -411,10 +385,15 @@ input[type="text"]:focus, button:hover {
   padding: 0;
 }
 
-.footer-section li {
+.footer-section li a {
   margin-bottom: 5px;
-  color: #ddd; /* Light grey text for list items */
+  color: #d3d3d3;
 }
+.footer-section li a:hover{
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 
 /* Footer Bottom Styling */
 .footer-bottom {
@@ -484,28 +463,39 @@ input[type="text"]:focus, button:hover {
 }
 
 /* Style for the link */
-a {
-  font-size: 15px;
-  color: #a00d0d; /* Red color for the text */
-  text-decoration: none; /* Remove the default underline */
-  font-weight: bold; /* Make the text bold */
-  padding: 10px 20px;
-  border: 2px solid #a00d0d; /* Add a border to the link */
-  border-radius: 30px; /* Rounded corners for a smooth, modern look */
-  display: inline-flex; /* Make the link a flex container */
-  justify-content: center; /* Center text horizontally */
-  align-items: center; /* Center text vertically */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-  min-width: none; /* Minimum width to make it look like a button */
-  text-align: center; /* Ensure the text is centered */
+.logo a{
+  font-size: 30px;
+  color: #a00d0d;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.download {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  min-width: none;
+  text-align: center;
 }
 
-a:hover {
-  background-color: #a00d0d; /* Red background on hover */
-  color: white; /* Change text color to white on hover */
-  transform: scale(1.05); /* Slight zoom effect on hover */
+.download:hover {
+  transform: scale(1.05);
 }
 
-a:active {
-  transform: scale(1); /* Return to normal size when clicked */
+.download:active {
+  transform: scale(1);
+}
+
+.cites li{
+  color: #d3d3d3;
+  padding-left: 10px;
+  position: relative;
+  left: 5px;
+  bottom: 10px;
+}
+
+.cites li:hover{
+  color: #ffffff;
+  text-decoration: underline;
 }

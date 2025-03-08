@@ -1,24 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
 import React from 'react';
 import './App.css'; // Add your CSS styling here or use a library like TailwindCSS or Bootstrap
-
 function App() {
   return (
     
     <div className="app-container">
       <header className="header">
-        <div className="logo">𝔸𝕨𝕖𝕟𝕚</div>
+        <div className="logo"><a href="index.html">𝔸𝕨𝕖𝕟𝕚</a></div>
         <nav className="nav">
-        </nav>
+        
         
         <div className="auth-buttons">
-        <button>Log In</button>
+          <button className="sign-up">Log In</button>
           <button className="sign-up">Sign Up</button>
         </div>
+        </nav>
       </header>
 
       <main>
@@ -105,43 +101,43 @@ function App() {
         <div className="footer-top">
           <div className="footer-section">
             <h3>Top Cities</h3>
-            <ul>
-              <li>sfax</li>
-              <li>tunis</li>
-              <li>arousa</li>
+            <ul className='cites'>
+              <li>Sfax</li>
+              <li>Tunis</li>
+              <li>Sousse</li>
             </ul>
           </div>
 
           <div className="footer-section">
             <h3>Homeowner Services</h3>
             <ul>
-              <li>Find local businesses</li>
-              <li>Services near me</li>
+              <li><a href="#">Find local businesses</a></li>
+              <li><a href="#">Services near me</a></li>
             </ul>
           </div>
 
           <div className="footer-section">
             <h3>For Service Pros</h3>
             <ul>
-              <li>Register your business</li>
-              <li>Business center</li>
+              <li><a href="#">Register your business</a></li>
+              <li><a href="#">Business center</a></li>
             </ul>
           </div>
 
           <div className="footer-section">
             <h3>Resources</h3>
             <ul>
-              <li>Solution center</li>
-              <li>Project cost center</li>
+              <li><a href="#">Solution center</a></li>
+              <li><a href="#">Project cost center</a></li>
             </ul>
           </div>
 
           <div className="footer-section">
             <h3>About Us</h3>
             <ul>
-              <li>How it works</li>
-              <li>Who we are</li>
-              <li>Contact us</li>
+              <li><a href="#">How it works</a></li>
+              <li><a href="#">Who we are</a></li>
+              <li><a href="#">Contact us</a></li>
             </ul>
           </div>
         </div>
@@ -158,10 +154,10 @@ function App() {
 
           <div className="footer-apps">
             <h3>Download the app:</h3>
-            <a href="#">
+            <a href="#" className="download">
               <img src="/images/app-store-badge-60@2x.avif" alt="Download on the App Store" />
             </a>
-            <a href="#">
+            <a href="#" className="download">
               <img src="/images/google-play-badge-60@2x.webp" alt="GET IT ON Google Play" />
             </a>
           </div>
