@@ -1,6 +1,8 @@
 import './App.css'
 import React from 'react';
-import './App.css'; // Add your CSS styling here or use a library like TailwindCSS or Bootstrap
+import './App.css';
+import { Link } from "react-router-dom";
+
 function App() {
   return (
     
@@ -11,7 +13,7 @@ function App() {
         
         
         <div className="auth-buttons">
-          <button className="sign-up">Log In</button>
+          <Link to="components/login"><button className="sign-up">Log In</button></Link>
           <button className="sign-up">Sign Up</button>
         </div>
         </nav>
