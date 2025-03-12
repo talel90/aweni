@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.signup-container {
+  margin: 0 auto;
+  max-width: 410px;
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.37rem;
+  font-weight: 600;
+  margin-bottom: 1.87rem;
+}
+
+.signup-form .input-wrapper {
+  height: 54px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.signup-form .input-field {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 1.06rem;
+  border-radius: 0.31rem;
+  border: 1px solid #f2b3b3;
+  padding: 0px 1.25rem 0 3.12rem;
+  transition: 0.2s ease;
+  background: #ffffff; /* Set background to black */
+  color:#8a2f2f; /* Set text color to white */
+}
+
+.signup-form .input-field:focus {
+  border-color: #e44141;
+}
+
+.signup-form .input-field::placeholder {
+  color: #c88484;
+}
+
+.signup-form .input-wrapper i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease;
+}
+
+.signup-form .input-wrapper i:not(.eye-icon) {
+  left: 0.93rem;
+  color: #e09595;
+  pointer-events: none;
+}
+
+.signup-form .input-field:focus ~ i:not(.eye-icon) {
+  color: #8a2f2f;
+}
+
+.signup-form .input-wrapper i.eye-icon {
+  right: 0.93rem;
+  color: #e87d7d;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.signup-button {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 54px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 2.19rem;
+  border-radius: 0.31rem;
+  background: #e44141;
+  transition: 0.3s ease;
+}
+
+.signup-button:hover {
+  background: #df2020;
+}
+
+.login-prompt {
+  text-align: center;
+  font-size: 1.06rem;
+  font-weight: 500;
+  margin: 1.75rem 0 0.31rem;
+}
+
+a {
+  color: #e44141;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

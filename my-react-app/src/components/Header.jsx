@@ -1,17 +1,20 @@
 import React from 'react';
 import './Header.css';
 
-function Header() {
+const Header = () => {
   return (
     <header className="header">
-      <div className="logo">𝔸𝕨𝕖𝕟𝕚</div>
-      <div className="auth-buttons">
-        
-        <button>Log In</button>
-        <button className="sign-up">Sign Up</button>
+      <div className="logo">
+        <a href="/">Aweni</a>
       </div>
+      <nav className="nav">
+        <ul className="nav-links">
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup" className="sign-up">Sign Up</a></li>
+        </ul>
+      </nav>
     </header>
   );
-}
+};
 
 export default Header;

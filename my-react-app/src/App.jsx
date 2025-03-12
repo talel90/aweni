@@ -14,7 +14,7 @@ function App() {
         
         <div className="auth-buttons">
           <Link to="components/login"><button className="sign-up">Log In</button></Link>
-          <button className="sign-up">Sign Up</button>
+          <Link to="components/SignUp"><button className="sign-up">Sign Up</button></Link>
         </div>
         </nav>
       </header>

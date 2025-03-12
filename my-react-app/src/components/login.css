@@ -10,7 +10,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #dcdcdc;
+  /*background: #dcdcdc;*/
 }
 #root {
   width: 100%;
@@ -48,11 +48,16 @@ body {
   background: #ffffff;
   border: 1px solid #ffcbcb;
   transition: 0.3s ease;
-  color:#c88484;
+  color: #c88484;
 }
 .social-login .social-button:hover {
   border-color: #e44141;
-  background: #f1eff9;
+  background: #ffffff;
+}
+.social-login .social-button:focus,
+.social-login .social-button:active {
+  border-color: #e44141; /* Change this color to your desired color */
+  outline: none; /* Remove the default outline */
 }
 .social-login .social-button .social-icon {
   width: 23px;
@@ -165,4 +170,47 @@ body {
 }
 .login-container a:hover {
   text-decoration: underline;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem; /* Adjust padding to make space for the icon */
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.material-icons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  cursor: pointer;
+  color: #888;
+}
+
+.eye-icon {
+  right: 1rem; /* Position the eye icon on the right */
+  cursor: pointer;
+  color: #888888;
+}
+
+.nav-links .sign-up {
+  background-color: #a00d0d;
+  color: #fff;
+  border: 1px solid transparent; /* Add a border to ensure the border color changes on focus/active */
+}
+
+.nav-links .sign-up:hover {
+  background-color: #800808;
+}
+
+.nav-links .sign-up:focus,
+.nav-links .sign-up:active {
+  border-color: #800808; /* Change this color to your desired color */
+  outline: none; /* Remove the default outline */
 }
