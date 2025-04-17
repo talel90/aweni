@@ -10,6 +10,12 @@ function Dashboard() {
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [priceRange, setPriceRange] = useState([0, 1000]);
     const [selectedDate, setSelectedDate] = useState(new Date());
+    const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+    const [notifications, setNotifications] = useState([
+        { id: 1, message: 'New booking request', time: '2m ago', read: false },
+        { id: 2, message: 'Payment received', time: '1h ago', read: false },
+        { id: 3, message: 'New review', time: '3h ago', read: true }
+    ]);
 
     useEffect(() => {
         const userData = localStorage.getItem('user');
@@ -23,6 +29,10 @@ function Dashboard() {
     const handleLogout = () => {
         localStorage.removeItem('user');
         navigate('/');
+    };
+
+    const toggleSidebar = () => {
+        setIsSidebarCollapsed(!isSidebarCollapsed);
     };
 
     const serviceCategories = [
@@ -51,6 +61,26 @@ function Dashboard() {
         earnings: { total: 12500, trend: '+8%' },
         satisfaction: { rating: 4.8, reviews: 89 }
     };
+
+    const NotificationCenter = () => (
+        <div className="notification-center">
+            <div className="notification-header">
+                <h3>Notifications</h3>
+                <button className="mark-all-read">Mark all as read</button>
+            </div>
+            <div className="notification-list">
+                {notifications.map(notification => (
+                    <div key={notification.id} className={`notification-item ${!notification.read ? 'unread' : ''}`}>
+                        <div className="notification-content">
+                            <p>{notification.message}</p>
+                            <small>{notification.time}</small>
+                        </div>
+                        {!notification.read && <div className="notification-dot"></div>}
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 
     const QuickActions = () => (
         <div className="quick-actions">
@@ -149,7 +179,6 @@ function Dashboard() {
         <div className="calendar-widget">
             <h3>Upcoming Appointments</h3>
             <div className="calendar">
-                {/* Calendar implementation */}
                 <div className="appointment-list">
                     <div className="appointment-item">
                         <div className="time">09:00 AM</div>
@@ -231,13 +260,34 @@ function Dashboard() {
                         <button className="reply-button">Reply</button>
                     </div>
                 </div>
-                {/* More review cards */}
             </div>
+        </div>
+    );
+
+    const FloatingActionButton = () => (
+        <div className="floating-action-button">
+            <button className="fab-button">
+                <span className="fab-icon">+</span>
+            </button>
+            <div className="fab-menu">
+                <button className="fab-item">New Booking</button>
+                <button className="fab-item">Upload Document</button>
+                <button className="fab-item">Contact Support</button>
+            </div>
+        </div>
+    );
+
+    const Breadcrumb = () => (
+        <div className="breadcrumb">
+            <Link to="/">Home</Link>
+            <span className="separator">/</span>
+            <span className="current">Dashboard</span>
         </div>
     );
 
     const ProfessionalDashboard = () => (
         <div className="dashboard-content">
+            <Breadcrumb />
             <QuickActions />
             <div className="dashboard-grid">
                 <div className="main-content">
@@ -245,17 +295,23 @@ function Dashboard() {
                     <ServiceCategories />
                     <FeaturedProfessionals />
                 </div>
-                <div className="sidebar">
+                <div className={`sidebar ${isSidebarCollapsed ? 'collapsed' : ''}`}>
+                    <button className="collapse-button" onClick={toggleSidebar}>
+                        {isSidebarCollapsed ? '→' : '←'}
+                    </button>
                     <Calendar />
                     <ActivityTimeline />
                     <Reviews />
+                    <NotificationCenter />
                 </div>
             </div>
+            <FloatingActionButton />
         </div>
     );
 
     const ClientDashboard = () => (
         <div className="dashboard-content">
+            <Breadcrumb />
             <QuickActions />
             <EnhancedSearch />
             <div className="dashboard-grid">
@@ -263,11 +319,16 @@ function Dashboard() {
                     <ServiceCategories />
                     <FeaturedProfessionals />
                 </div>
-                <div className="sidebar">
+                <div className={`sidebar ${isSidebarCollapsed ? 'collapsed' : ''}`}>
+                    <button className="collapse-button" onClick={toggleSidebar}>
+                        {isSidebarCollapsed ? '→' : '←'}
+                    </button>
                     <Calendar />
                     <ActivityTimeline />
+                    <NotificationCenter />
                 </div>
             </div>
+            <FloatingActionButton />
         </div>
     );
 
@@ -280,9 +341,11 @@ function Dashboard() {
                     </Link>
                     <span className="welcome-text">Welcome, {user?.name}</span>
                 </div>
-                <button className="logout-button" onClick={handleLogout}>
-                    Logout
-                </button>
+                <div className="nav-actions">
+                    <button className="logout-button" onClick={handleLogout}>
+                        Logout
+                    </button>
+                </div>
             </nav>
             {user?.account_type === 'professional' ? <ProfessionalDashboard /> : <ClientDashboard />}
         </div>
