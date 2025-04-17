@@ -15,17 +15,30 @@ function Login() {
 
         // Mock login functionality
         if (email && password) {
+            // For demo purposes, we'll set account type based on email
+            // In a real app, this would come from your backend
+            const account_type = email.includes('pro') ? 'professional' : 'client';
+            
             // Store mock user data
             const mockUser = {
                 email: email,
-                name: 'Demo User'
+                name: email.split('@')[0],
+                account_type: account_type
             };
             localStorage.setItem('user', JSON.stringify(mockUser));
-            navigate('/');
+            navigate('/dashboard');
         } else {
             setError('Please enter both email and password');
         }
     };
+
+    // Check if user is already logged in
+    React.useEffect(() => {
+        const user = localStorage.getItem('user');
+        if (user) {
+            navigate('/dashboard');
+        }
+    }, [navigate]);
 
     return (
         <div className="auth-container">
